@@ -1,20 +1,21 @@
 generator client {
     provider = "prisma-client-js"
-    output   = "../src/generated/prisma"
+    output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
   provider = "postgresql"
+  
 }
 
 model User {
-    id      String    @id @default(cuid())
-    email   String    @unique
-    password    String
-    name    String
-    role    Role   @default(USER)
+    id        String    @id @default(cuid())
+    email     String    @unique
+    password  String
+    name      String
+    role      Role      @default(USER)
     teamId    String?
-    Team Team?  @relation(fields: [teamId], references: [id], onDelete: SetNull)
+    team      Team?    @relation(fields: [teamId], references: [id], onDelete: SetNull)
     
 
 
