@@ -29,7 +29,7 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
             
 
             try {
-                const data = await apiClient.login(email, password);
+                const data = await apiClient.login(email, password) as unknown as {user: User};
                 setUser(data.user);
                 return {success: true, user: data.user}
 
@@ -81,7 +81,7 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
             try {
                 const userData = await apiClient.getCurrentUser();
 
-                setUser(userData)
+                setUser(userData || null)
             } catch (error) {
                 console.error("Failed to load user ",error);
                 

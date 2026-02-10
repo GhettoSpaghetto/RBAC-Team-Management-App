@@ -9,7 +9,6 @@ interface HeaderProps {
 }
 const Header = ({user}: HeaderProps ) => {
   const pathName = usePathname();
-  const user1 = false
   const navigation = [
     {name: "Home", href:"/", show: true},
     {name: "Dashboard", href: "/dashboard", show: true},
@@ -54,7 +53,7 @@ const Header = ({user}: HeaderProps ) => {
           </nav>
           {/* User Info */}
           <div className="flex item-center space-x-4">
-            {user1 ? <div>
+            {user ? <div>
               <span className="text-sm text-slate-300">Samarth Kaushal</span>
               <button type="button" 
                       // onClick={} 
