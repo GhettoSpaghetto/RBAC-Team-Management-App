@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AuthProvider from "./provider/AuthProvider";
 
 
 
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body
         className= "min-h-screen bg-slate-950 text-slate"
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider> 
       </body>
     </html>
   );
