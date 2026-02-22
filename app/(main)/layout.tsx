@@ -1,8 +1,8 @@
-import { apiClient } from "@/lib/apiClient"
 import Header from "../components/layout/Header"
+import { getCurrentUser } from "@/lib/auth"
 
-const MainLayout = async ({children}: {children: React.ReactNode }) => {
-  const user = await apiClient.getCurrentUser()
+const MainLayout =  async ({children}: {children: React.ReactNode }) => {
+  const user = await  getCurrentUser()
   return <>
     
     <Header user ={user ?? null}/>

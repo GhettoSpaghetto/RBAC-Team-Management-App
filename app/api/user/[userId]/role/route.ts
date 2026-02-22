@@ -36,6 +36,9 @@ export const PATCH = async (request: NextRequest, context: {params: Promise<{use
 
         const {role} = await  request.json();
 
+        console.log("Incoming role:", role);
+        console.log("Type of role:", typeof role); 
+
         //Validate role  
         const validRoles = [Role.USER, Role.MANAGER]
 
