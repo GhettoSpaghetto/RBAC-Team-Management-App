@@ -2,8 +2,7 @@
 
 
 import { apiClient } from "@/lib/apiClient";
-import { AuthContextType, User } from "@/lib/types";
-import { Role } from "@prisma/client";
+import { AuthContextType, User, Role } from "@/lib/types";
 import { error } from "console";
 import { createContext, useActionState, useContext, useEffect, useState } from "react";
 
