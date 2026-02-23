@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 
 import { checkDatabasConnection } from "@/lib/db";
 import { NextResponse } from "next/server";
