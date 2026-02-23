@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { generateToken, hashPassword } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { Role } from "@/lib/types";
