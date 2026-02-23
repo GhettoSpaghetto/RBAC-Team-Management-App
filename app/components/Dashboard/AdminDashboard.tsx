@@ -1,7 +1,7 @@
     "use client"
 
     import { apiClient } from "@/lib/apiClient"
-    import { Role, Team, User } from "@prisma/client"
+    import { Role, Team, User } from "@/lib/types"
     import { useTransition } from "react"
 
     interface AdminDashboardProps {
