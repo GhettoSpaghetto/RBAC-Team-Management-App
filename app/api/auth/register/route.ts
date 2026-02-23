@@ -1,6 +1,6 @@
 import { generateToken, hashPassword } from "@/lib/auth";
 import { prisma } from "@/lib/db";
-import { Role } from "@prisma/client";
+import { Role } from "@/lib/types";
 import { NextRequest, NextResponse } from "next/server";
 
 
