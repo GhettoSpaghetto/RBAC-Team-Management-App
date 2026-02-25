@@ -1,26 +1,17 @@
 import { PrismaClient } from "@prisma/client";
 
-let prisma: PrismaClient;
+export const prisma = new PrismaClient();
 
-declare global {
-  var prisma: PrismaClient | undefined;
-}
-
-if (!global.prisma) {
-  global.prisma = new PrismaClient();
-}
-
-prisma = global.prisma;
-
-export { prisma };
 
 // Database helper function
-export async function checkDatabasConnection(): Promise<boolean> {
+export async function checkDatabaseConnection(): Promise<boolean>{
   try {
-    await prisma.$queryRaw`SELECT 1`;
-    return true;
+    await prisma.$queryRaw`Select 1`;
+    return true
+
+
   } catch (error) {
-    console.error(`Database connection failed: ${error}`);
+    console.error(`Database connection failed : ${error}`  );
     return false;
   }
 }
