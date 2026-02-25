@@ -1,10 +1,10 @@
 export const dynamic = 'force-dynamic';
 
-import { checkDatabasConnection } from "@/lib/db";
+import { checkDatabaseConnection } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    const isConnected = await checkDatabasConnection();
+    const isConnected = await checkDatabaseConnection();
     if(!isConnected){
         return NextResponse.json(
             {
