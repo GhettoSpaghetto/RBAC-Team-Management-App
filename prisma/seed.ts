@@ -1,4 +1,4 @@
-import { hashPassword } from "@/lib/auth";
+import { hashPassword } from "../lib/auth";
 import { PrismaClient, Role } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
@@ -48,7 +48,8 @@ const main = async () => {
     {
       name: "John Developer",
       email: "john@company.com",
-      team: teams[0]
+      team: teams[0],
+      role: Role.USER
     },
     {
       name: "Jane Designer",
