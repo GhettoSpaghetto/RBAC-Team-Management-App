@@ -14,8 +14,9 @@ export async function POST(request: NextRequest) {
         if(!name || !email || !password) {
             return NextResponse.json({
                 error: "Name, mail & password are required or not valid",
-                status: 400
-            });
+                },
+                {status: 400}
+            );
         }
 
         //Find Existing user
@@ -25,9 +26,12 @@ export async function POST(request: NextRequest) {
 
         if(existingUser) {
             return NextResponse.json({
-                error: "User with this email already exist",
-                status: 409
-            });
+                error: "User with this email already exist"
+                },
+                {
+                    status: 409
+                }
+            );
         }
 
         let teamId: string | undefined;
@@ -39,8 +43,9 @@ export async function POST(request: NextRequest) {
             if(!team){
                  return NextResponse.json({
                     error: "Please enter a valid team code",
-                    status: 400
-            });
+                    },
+                    {status: 400}
+                );
             }
             teamId = team.id;
         }
@@ -77,8 +82,9 @@ export async function POST(request: NextRequest) {
                 teamId: user.teamId,
                 team: user.team,
                 token, 
-            },
-        });
+            },},
+            {status: 201}
+        );
 
         //Set cookie
         response.cookies.set("token", token, {
@@ -94,8 +100,9 @@ export async function POST(request: NextRequest) {
         console.error("Reguster failed");
         return NextResponse.json({
             error: "Internal server error, something went wrong!",
-            status: 400
-        });
+            },
+            {status: 400}
+        );
         
     }
 }

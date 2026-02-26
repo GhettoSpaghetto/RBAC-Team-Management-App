@@ -18,7 +18,7 @@ const RegisterPage = () => {
         ): Promise<RegsiterState> => {
             const name =formData.get("name") as string;
             const email =formData.get("email") as string;
-            const password =formData.get("password ") as string;
+            const password =formData.get("password") as string;
             const teamCode =formData.get("teamCode") as string;
 
             try {
